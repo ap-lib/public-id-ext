@@ -4,19 +4,22 @@ set -e
 
 cd src
 
-echo "🛠️  Running phpize..."
+echo "Running phpize..."
 phpize
 
-echo "⚙️  Configuring extension..."
+echo "Configuring extension..."
 ./configure --enable-public-id
 
-echo "🔨  Building..."
+echo "Building..."
 make
 
-echo "✅ Done!"
+echo "Make Done!"
 
 
 sudo make install
 
+echo "Install Done!"
+
 phpize --clean
 find . -type f -name "*.dep" -delete
+echo "Clearing Done!"
